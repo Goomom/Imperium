@@ -1,6 +1,7 @@
 * {
-    margin: auto;
-    padding: 0%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 a{
@@ -9,7 +10,8 @@ a{
 
 body{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    background-color: #f5f5f5;
+    background-color: #cccccc;
+    line-height: 1.5;
 }
 
 header {
@@ -43,41 +45,198 @@ header nav a:hover{
 
 
 #banner {
-    background: linear-gradient(to right, rgba(236, 226, 85, 0.3), rgba(41, 47, 102, 0.267)), url('../images/a2d7874f-5265-4f5f-9360-8a2b6e2578d1.jpg') no-repeat center center;
+    background:
+        linear-gradient(to bottom, rgba(245, 245, 245, 0.06) 0%, rgba(245, 245, 245, 0.16) 70%, rgba(204, 204, 204, 1) 100%),
+        url('../images/a2d7874f-5265-4f5f-9360-8a2b6e2578d1.jpg') no-repeat center center;
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 720px;
     padding: 0 120px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-top: 120px;
+}}
+
+#banner > div {
+    width: 100%;
+    max-width: 520px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
 }
 
-#banner  div h1{
+#banner div h1{
     color: #f5f5f5;
     font-size: 38px;
+    margin: 0 0 12px;
 }
 
-#banner div a{
+#banner div a {
+    position: relative;
+    overflow: hidden;
     color: #f5f5f5;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #832424;
-    color: #f5f5f5;
+    background: rgba(255, 255, 255, 0.14);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.28);
     font-size: 16px;
     width: 180px;
-    height: 35px;
-    border-radius: 8px;
-    transition: .3s;
+    height: 42px;
+    border-radius: 999px;
+    transition: transform .3s ease, background .3s ease, box-shadow .3s ease;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+#banner div a::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.28), transparent 45%, rgba(255, 255, 255, 0.1) 70%, transparent 100%);
+    transform: translateX(-120%);
+    transition: transform .5s ease;
+    pointer-events: none;
+}
+
+.comprar button {
+    position: relative;
+    overflow: hidden;
+    color: #f5f5f5;
+    background: rgba(255, 255, 255, 0.14);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: transform .3s ease, background .3s ease, box-shadow .3s ease;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.comprar button::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.28), transparent 45%, rgba(255, 255, 255, 0.1) 70%, transparent 100%);
+    transform: translateX(-120%);
+    transition: transform .5s ease;
+    pointer-events: none;
+}
+
+.comprar button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 10px 28px rgba(0, 0, 0, 0.18);
+}
+
+.comprar button:hover::before {
+    transform: translateX(120%);
 }
 
 #banner div p{
     color: #f5f5f5;
     font-size: 18px;
-    margin: 20px 0;
-
+    margin: 0 0 24px;
 }
 
 #banner div a:hover {
-    background-color: #ff3d3d;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 10px 28px rgba(0, 0, 0, 0.2);
+}
+
+#banner div a:hover::before {
+    transform: translateX(120%);
+}
+
+#destaques {
+    text-align: center;
+    padding: 100px 120px;
+    background-color: #cccccc;
+}
+
+#destaques h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.subtitulo {
+    font-size: 16px;
+    color: rgb(123, 123, 123);
+}
+
+.carros {
+    display: flex;
+    text-align: left;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin: 40px 0;
+}
+.card {
+   width: 100%;
+   max-width: 370px;
+   border-radius: 12px;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.card .detalhes {
+    margin: 10px 0;
+}
+
+.detalhes .tag {
+    text-transform: uppercase;
+    color: rgb(121, 119, 119);
+    font-size: 12px;
+}
+
+.detalhes h3 {
+    margin: 10px 0;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.descricao {
+    color: rgb(121, 119, 119);
+    font-size: 14px;
+}
+
+
+@media (max-width: 900px) {
+    #banner {
+        min-height: 600px;
+        padding: 0 40px;
+    }
+}
+
+@media (max-width: 600px) {
+    #banner {
+        min-height: 480px;
+        padding: 0 24px;
+        align-items: flex-start;
+        padding-top: 80px;
+        padding-bottom: 40px;
+    }
+
+    #banner div h1 {
+        font-size: 28px;
+    }
+
+    #banner div p {
+        font-size: 16px;
+    }
+
+    #banner div a {
+        width: 100%;
+        max-width: 220px;
+    }
 }
