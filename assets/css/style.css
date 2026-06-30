@@ -56,6 +56,7 @@ header nav a:hover{
     align-items: flex-start;
     justify-content: flex-start;
     padding-top: 120px;
+<<<<<<< HEAD
 }
 
 #banner > div {
@@ -67,6 +68,19 @@ header nav a:hover{
     text-align: left;
 }
 
+=======
+}}
+
+#banner > div {
+    width: 100%;
+    max-width: 520px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+>>>>>>> 86afbcdb9db993d380b875ee8259d6e6dd755538
 #banner div h1{
     color: #f5f5f5;
     font-size: 38px;
@@ -148,6 +162,100 @@ header nav a:hover{
     background: rgba(255, 255, 255, 0.2);
     transform: translateY(-3px);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 10px 28px rgba(0, 0, 0, 0.2);
+<<<<<<< HEAD
+=======
+}
+
+#banner div a:hover::before {
+    transform: translateX(120%);
+}
+
+#destaques {
+    text-align: center;
+    padding: 100px 120px;
+    background-color: #cccccc;
+}
+
+#destaques h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.subtitulo {
+    font-size: 16px;
+    color: rgb(123, 123, 123);
+}
+
+.carros {
+    display: flex;
+    text-align: left;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin: 40px 0;
+}
+.card {
+   width: 100%;
+   max-width: 370px;
+   border-radius: 12px;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.card .detalhes {
+    margin: 10px 0;
+}
+
+.detalhes .tag {
+    text-transform: uppercase;
+    color: rgb(121, 119, 119);
+    font-size: 12px;
+}
+
+.detalhes h3 {
+    margin: 10px 0;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.descricao {
+    color: rgb(121, 119, 119);
+    font-size: 14px;
+}
+
+
+@media (max-width: 900px) {
+    #banner {
+        min-height: 600px;
+        padding: 0 40px;
+    }
+}
+
+@media (max-width: 600px) {
+    #banner {
+        min-height: 480px;
+        padding: 0 24px;
+        align-items: flex-start;
+        padding-top: 80px;
+        padding-bottom: 40px;
+    }
+
+    #banner div h1 {
+        font-size: 28px;
+    }
+
+    #banner div p {
+        font-size: 16px;
+    }
+
+    #banner div a {
+        width: 100%;
+        max-width: 220px;
+    }
+>>>>>>> 86afbcdb9db993d380b875ee8259d6e6dd755538
 }
 
 #banner div a:hover::before {
