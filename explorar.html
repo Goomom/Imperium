@@ -15,6 +15,36 @@
             <a href="./explorar.html"> Explorar</a>
         </nav>
     </header>
-    
+    <script type="module">
+    import { produtos } from "./data.js";
+
+    const container = document.querySelector(".produtos");
+
+    for (const item of produtos) {
+        container.innerHTML += `
+            <div class="card">
+                <img src="${item.img}" alt="${item.nome}">
+
+                <div class="detalhes">
+                    <div class="detalhes-textos">
+                        <p class="tag">${item.marca}</p>
+                        <h3>${item.nome}</h3>
+                        <p class="descricao">${item.descricao}</p>
+                    </div>
+
+                    <div class="comprar">
+                        <p class="preco">
+                            R$ ${item.preco.toLocaleString("pt-BR", {
+                                minimumFractionDigits: 2,
+                                maximumFractionDigits: 2
+                            })}
+                        </p>
+                        <button>Ver detalhes</button>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+    </script>
 </body>
 </html>
