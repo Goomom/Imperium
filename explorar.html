@@ -15,6 +15,55 @@
             <a href="./explorar.html"> Explorar</a>
         </nav>
     </header>
-    
+    <main id="main-produtos">
+    <h1>Nossos Veículos</h1>
+    <p class="subtitulo">
+        Encontre o carro ideal para você. Modelos esportivos, SUVs, sedãs e supercarros selecionados.
+    </p>
+
+    <div class="botoes">
+        <button class="tag-produtos">Todos</button>
+        <button class="tag-produtos">Esportivos</button>
+        <button class="tag-produtos">Sedãs</button>
+        <button class="tag-produtos">SUVs</button>
+        <button class="tag-produtos">Supercarros</button>
+    </div>
+
+    <div class="produtos"></div>
+    </main>
+
+    <footer>
+        <h2>Imperium Motors</h2>
+        <p>Excelência, desempenho e exclusividade em cada veículo.</p>
+        <p class="copyright">&copy; 2026 Imperium Motors. Todos os direitos reservados.</p>
+    </footer>
+
+    <script type="module" src="./data.js"></script>
+    <script type="module">
+        import { produtos } from "./data.js";
+
+        const container = document.querySelector(".produtos");
+
+        for (const item of produtos) {
+            container.innerHTML += `
+                <div class="card">
+                    <img src="${item.img}" alt="${item.nome}">
+
+                    <div class="detalhes">
+                        <div class="detalhes-textos">
+                            <p class="tag">${item.tag}</p>
+                            <h3>${item.nome}</h3>
+                            <p class="descricao">${item.descricao}</p>
+                        </div>
+
+                        <div class="comprar">
+                            <p class="preco">R$ ${item.preco.toLocaleString("pt-BR")}</p>
+                            <button>Ver detalhes</button>
+                        </div>
+                    </div>
+                </div>
+            `
+        }
+    </script>
 </body>
 </html>
