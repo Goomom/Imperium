@@ -15,36 +15,21 @@
             <a href="./explorar.html"> Explorar</a>
         </nav>
     </header>
-    <script type="module">
-    import { produtos } from "./data.js";
+    <main id="main-produtos">
+    <h1>Nossos Veículos</h1>
+    <p class="subtitulo">
+        Encontre o carro ideal para você. Modelos esportivos, SUVs, sedãs e supercarros selecionados.
+    </p>
 
-    const container = document.querySelector(".produtos");
+    <div class="botoes">
+        <button class="tag-produtos">Todos</button>
+        <button class="tag-produtos">Esportivos</button>
+        <button class="tag-produtos">Sedãs</button>
+        <button class="tag-produtos">SUVs</button>
+        <button class="tag-produtos">Supercarros</button>
+    </div>
 
-    for (const item of produtos) {
-        container.innerHTML += `
-            <div class="card">
-                <img src="${item.img}" alt="${item.nome}">
-
-                <div class="detalhes">
-                    <div class="detalhes-textos">
-                        <p class="tag">${item.marca}</p>
-                        <h3>${item.nome}</h3>
-                        <p class="descricao">${item.descricao}</p>
-                    </div>
-
-                    <div class="comprar">
-                        <p class="preco">
-                            R$ ${item.preco.toLocaleString("pt-BR", {
-                                minimumFractionDigits: 2,
-                                maximumFractionDigits: 2
-                            })}
-                        </p>
-                        <button>Ver detalhes</button>
-                    </div>
-                </div>
-            </div>
-        `;
-    }
-    </script>
+    <div class="produtos"></div>
+    </main>
 </body>
 </html>
